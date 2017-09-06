@@ -20,6 +20,8 @@ import { SearchArray } from './searcharray';
      <button type="button" (click)="addtoarray()" class="btn btn-primary btn-block">Button 1</button>
   </li>
 
+  
+
   `
 })
 export class SelectionComponent {

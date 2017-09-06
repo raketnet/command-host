@@ -1,6 +1,6 @@
 import { HeroDetailComponent } from './hero-detail.component';
 import { SelectionComponent } from './selection.component';
-import { Component } from '@angular/core';
+import { Component,ViewChild,ElementRef } from '@angular/core';
 
 import { Hero } from './hero';
 
@@ -21,6 +21,18 @@ const HEROES: Hero[] = [
   selector: 'app-root',
   template: `
     <h1>{{title}}</h1>
+
+<div class="container">
+  <h2>Progress Bar With Label</h2>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" [attr.aria-valuenow]="trainingProgress" [style.width.%]="trainingProgress">
+        {{trainingProgress}}% Complete">
+      60%
+    </div>
+  </div>
+</div>
+<br>
+
    <selection-part></selection-part>
     <h2>My Heroes</h2>
     <ul class="heroes">
@@ -35,12 +47,27 @@ const HEROES: Hero[] = [
   styles: [
    ]
 })
-export class AppComponent {
+export class AppComponent  {
+  trainingProgress : string;
   title = 'Tour of Heroes';
   heroes = HEROES;
   selectedHero: Hero;
 
   onSelect(hero: Hero): void {
+     this.myFunction();
+     this.trainingProgress="50"; 
     this.selectedHero = hero;
   }
+
+
+ myFunction() {
+    setInterval(this.alertFunc, 3000);
+}
+
+alertFunc() {
+
+  
+
+}
+
 }
