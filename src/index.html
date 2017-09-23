@@ -1,15 +1,106 @@
 <!doctype html>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<!--<link href="assets/listloader.css" rel="stylesheet">
+<link href="assets/loadertext.css" rel="stylesheet">
+<link href="assets/cube.css" rel="stylesheet"> 
+<link href="assets/hover.css" rel="stylesheet">-->
+<link href="assets/seet.css" rel="stylesheet">-
 <html>
 <head>
+  <script src="assets/emblem.js">
+var Emblem = {
+  init: function(el, str) {
+    var element = document.querySelector(el);
+    var text = str ? str : element.innerHTML;
+    element.innerHTML = '';
+    for (var i = 0; i < text.length; i++) {
+      var letter = text[i];
+      var span = document.createElement('span');
+      var node = document.createTextNode(letter);
+      var r = (360/text.length)*(i);
+      var x = (Math.PI/text.length).toFixed(0) * (i);
+      var y = (Math.PI/text.length).toFixed(0) * (i);
+      span.appendChild(node);
+      span.style.webkitTransform = 'rotateZ('+r+'deg) translate3d('+x+'px,'+y+'px,0)';
+      span.style.transform = 'rotateZ('+r+'deg) translate3d('+x+'px,'+y+'px,0)';
+      element.appendChild(span);
+    }
+  }
+};
+
+Emblem.init('.emblem');
+</script>
   <meta charset="utf-8">
-  <title>CommandHost</title>
+  <title>CommandHostfff</title>
+   <div class="emblem">  CommandHostfff CommandHostfff< </div>
+   <ulx>
+  <lix></lix>
+  <lix></lix>
+  <lix></lix>
+</ulx>
+
+<h1 class="loader">
+  <span>L</span>
+  <span>O</span>
+  <span>A</span>
+  <span>D</span>
+  <span>I</span>
+  <span>N</span>
+  <span>G</span>
+</h1>
   <base href="/">
+
+
+<div class="cube">
+  <div class="axis-switcher">
+    <div class="cube__comp">
+      <div class="cube__face"></div>
+      <div class="cube__face"></div>
+      <div class="cube__face"></div>
+      <div class="cube__face"></div>
+      <div class="cube__face"></div>
+    </div>
+    <div class="cube__comp">
+      <div class="cube__face"></div>
+      <div class="cube__face"></div>
+      <div class="cube__face"></div>
+      <div class="cube__face"></div>
+      <div class="cube__face"></div>
+    </div>
+  </div>
+</div>
+
+
+<!--
+autor: Marco Barría 
+https://twitter.com/marco_bf
+-->
+<div class="text">
+  <svg>
+   <defs>
+     <mask id="mask" x="0" y="0" width="100%" height="100%" >
+       <!-- alpha rectangle -->
+       <!-- rectángulo alfa -->
+       <rect id="alpha" x="0" y="0" width="100%" height="100%"/>
+       <!-- All text that you want -->
+       <!-- Coloca todo el texto que necesites -->
+       <text id="title" x="50%" y="0" dy="1.58em">SVG + CSS</text>
+       <text id="subtitle" x="50%" y="0" dy="9.8em">Use it please!</text>
+     </mask>
+    </defs>
+    <!-- Apply color here! -->
+    <!-- Color aquí -->
+    <rect id="base" x="0" y="0" width="100%" height="100%"/>
+  </svg>
+</div>
+
+<section class="intro"></section>
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root>Loading...</app-root>
+  <app-root>Loading...fff</app-root>
 </body>
 </html>
