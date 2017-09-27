@@ -1,9 +1,20 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input,HostListener } from '@angular/core';
 import { SearchArray } from './searcharray';
+
+export enum KEY_CODE {
+  RIGHT_ARROW = 68,
+  LEFT_ARROW = 37
+}
 
 @Component({
   selector: 'searchitem-part',
+
   template: `
+   <div >  {{isFocused}} </div>
+<button (click)="decrement()">-</button>
+{{xxxx}}
+<button (click)="increment()">+</button>
+
      <form>
         <div *ngFor="let searchArray of searchArrays" class="input-group">
             <div class="input-group-btn">
@@ -31,21 +42,28 @@ import { SearchArray } from './searcharray';
 </div>
 <br>
 
-            <input type="text" class="form-control">
+            <input type="text" (focus)="isFocused=true" (blur)="isFocused=false"  class="form-control">
         </div>
         
-        
+
+
     </form>
     <button type="button" (click)="addtoarray()" class="btn btn-primary btn-block">Button 1</button>
 
   `
 })
 export class searchitem {
+     xxxx: number = 0;
+    isFocused: boolean;
       @Input() searchArrays: SearchArray[];
+      constructor() { }
 //SearchArrays:SearchArray[] =[ new SearchArray(false,'c','test allan'),new SearchArray(false,'5','test brian')];
 //right:SearchArray[] =[];
 
+
+
 addtoarray(){
+
     this.searchArrays.push(new SearchArray(false,'c','xxxxxxxx'));
 }
 
@@ -59,4 +77,47 @@ updateActivity(test:SearchArray){
 
 
 
+ /*  if(this.isFocused) {
+       alert("focused");
+   
+   }
+   else{
+
+    switch(event.key ) {
+    case 's':
+        alert("Arrow Left");
+        break;
+    default:
+         alert("unknown");
 }
+}*/
+
+  
+
+//}
+
+ @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    if (event.keyCode === KEY_CODE.RIGHT_ARROW) {
+                alert("plus +++");
+      this.increment();
+    }
+
+    if (event.keyCode === KEY_CODE.LEFT_ARROW) {
+      this.decrement();
+    }
+  }
+  
+  increment() {
+    this.xxxx++;
+  }
+  
+  decrement() {
+    this.xxxx--;
+  }
+
+}
+
+
+
+        

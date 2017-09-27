@@ -1,6 +1,7 @@
 import { HeroDetailComponent } from './hero-detail.component';
 import { SelectionComponent } from './selection.component';
 import { Component,ViewChild,ElementRef } from '@angular/core';
+import { DropDown } from './dropdown.component';
 
 import { Hero } from './hero';
 
@@ -16,6 +17,7 @@ const HEROES: Hero[] = [
   { id: 19, name: 'Magma' },
   { id: 20, name: 'Tornado' }
 ];
+
 
 @Component({
   selector: 'app-root',
@@ -33,6 +35,8 @@ const HEROES: Hero[] = [
 </div>
 <br>
 
+<my-app></my-app>
+
    <selection-part></selection-part>
     <h2>My Heroes</h2>
     <ul class="heroes">
@@ -43,11 +47,14 @@ const HEROES: Hero[] = [
       </li>
     </ul>
     <hero-detail [hero]="selectedHero"></hero-detail>
+
+
   `,
   styles: [
    ]
 })
 export class AppComponent  {
+  
   trainingProgress : string;
   title = 'Tour of Heroes';
   heroes = HEROES;
@@ -70,5 +77,7 @@ alertFunc() {
   
 
 }
+
+
 
 }

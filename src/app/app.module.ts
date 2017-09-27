@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { SelectionComponent } from './selection.component';
 import { searchitem } from './searchItem.component';
+import { DropDown } from './dropdown.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroDetailComponent,
     SelectionComponent,
-    searchitem
+    searchitem,
+    DropDown
 
   ],
   imports: [
